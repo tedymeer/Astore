@@ -8,23 +8,25 @@ import PeopleIcon from '@material-ui/icons/People';
 import './sidebar.css'
 import React from 'react'
 
-function Sidebar() {
+function Sidebar(props) {
     return (
-        <ProSidebar>
+        <div className="sidebarwrap">
+        <ProSidebar collapsed={false}>
            
             <SidebarContent>
 
   <Menu iconShape="square">
-    <MenuItem icon={<DashboardIcon/>}>Dashboard</MenuItem>
-    <MenuItem icon={<DescriptionIcon/>}>Orders</MenuItem>
-    <MenuItem icon={<ShoppingCartIcon/>}>Products</MenuItem>
-    <MenuItem icon={<PeopleIcon/>}>Customers</MenuItem>
+    <MenuItem icon={<DashboardIcon/>} onClick={()=>{props.renderAdminPart('dash')}}>Dashboard</MenuItem>
+    <MenuItem icon={<DescriptionIcon/>} onClick={()=>{props.renderAdminPart('order')}}>Orders</MenuItem>
+    <MenuItem icon={<ShoppingCartIcon/>} onClick={()=>{props.renderAdminPart('product')}}>Products</MenuItem>
+    <MenuItem icon={<PeopleIcon/>} onClick={()=>{props.renderAdminPart('customer')}}>Customers</MenuItem>
   </Menu>
 
             </SidebarContent>
 
 
 </ProSidebar>
+</div>
     )
 }
 
