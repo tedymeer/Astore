@@ -1,4 +1,5 @@
 import React from 'react'
+import {useState} from 'react'
 import AdminSidebar from './AdminSidebar'
 import AdminNavbar from './AdminNavbar'
 import AdminDashboard from './AdminDashboard'
@@ -8,25 +9,22 @@ import AdminOrder from './AdminOrder'
 import './admin.css'
 
 function Adminpanel() {
-    var renderComponent=null;
+
+    const [rendercomp,setRenderComp]= useState('');
+
     function renderAdminPart(arg){
 
         if(arg==='dash'){
-            renderComponent=<AdminDashboard/>
-            console.log(renderComponent);
-
+            setRenderComp('dash')
         }
         else if(arg==='order'){
-            renderComponent=<AdminOrder/>
-            console.log(arg);
+            setRenderComp('order')
         }
         else if(arg==='product'){
-            renderComponent=<AdminProduct/>
-            console.log(arg);
+            setRenderComp('product')
         }
         else if(arg==='customer'){
-            renderComponent=<AdminCustomer/>
-            console.log(arg);
+            setRenderComp('customer')
         }
     }
     return (
@@ -36,10 +34,12 @@ function Adminpanel() {
           <div className="flexwrapadmin">
            
            <AdminSidebar renderAdminPart={renderAdminPart}/>
-         
-           
+         {rendercomp==='dash' && <AdminDashboard/>}
+         {rendercomp==='order' && <AdminOrder/>}
+         {rendercomp==='product' && <AdminProduct/>}
+         {rendercomp==='customer' && <AdminCustomer/>}
            </div>
-           {renderComponent}
+           
         </div>
     )
 }
