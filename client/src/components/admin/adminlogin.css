@@ -1,0 +1,24 @@
+.adminloginwrap{
+    height: 95vh;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.adminloginform{
+    width: fit-content;
+    padding: 5%;
+    /* border: 2px solid red; */
+}
+.inputfield{
+    display: block;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+.removedefaultstylelabel{
+    padding: 0;
+    margin: 0;
+}
+.formheading{
+    font-size: 1.5rem;
+}

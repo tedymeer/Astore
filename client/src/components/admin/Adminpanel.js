@@ -6,7 +6,7 @@ import AdminDashboard from './AdminDashboard'
 import AdminProduct from './AdminProduct'
 import AdminCustomer from './AdminCustomer'
 import AdminOrder from './AdminOrder'
-import './admin.css'
+import './adminpanel.css'
 
 function Adminpanel() {
 
