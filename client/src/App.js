@@ -12,7 +12,7 @@ import { useState } from 'react';
 
 function App() {
   
-  const [adminIsLoggedIn,setAdminIsLoggedIn]= useState(false)
+  const [adminIsLoggedIn,setAdminIsLoggedIn]= useState(true)
 
   function adminLoginFunction(value)
   {
