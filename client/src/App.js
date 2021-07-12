@@ -12,30 +12,38 @@ import { useState } from 'react';
 
 function App() {
   
-  const [adminIsLoggedIn,setAdminIsLoggedIn]= useState(true)
+  const [adminIsLoggedIn,setAdminIsLoggedIn]= useState(false)
 
-  function adminLoginFunction(value)
+  function adminLogin(status)
   {
-    setAdminIsLoggedIn(value)
+    setAdminIsLoggedIn(status)
+    console.log(status)
+  }
+
+  function adminLogout()
+  {
+    localStorage.clear();
+    setAdminIsLoggedIn(false)
+    console.log(false)
   }
   
   return (
 
     <div className="App">
       <Switch>
-         
-         {!adminIsLoggedIn && 
-         <Route exact path="/adminkij2772" 
-                render={(props) => (
-                <Adminlogin {...props} loginfunction={adminLoginFunction} />
-         )}
-         />
-         }
+
+        {!adminIsLoggedIn &&
+          <Route exact path="/adminkij2772">
+          <Adminlogin loginfunction={adminLogin} />
+          </Route>
+        }   
 
 
-         {adminIsLoggedIn && <Route exact path="/adminkij2772" component={Adminpanel} />}
-       
-           
+        {adminIsLoggedIn &&
+          <Route exact path="/adminkij2772">
+          <Adminpanel logoutfunction={adminLogout}/>
+          </Route>
+        }   
 
 
 

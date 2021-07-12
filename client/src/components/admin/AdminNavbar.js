@@ -1,6 +1,11 @@
 import React from 'react'
 import {Navbar,Nav} from 'react-bootstrap'
-function AdminNavbar() {
+function AdminNavbar(props) {
+
+
+
+
+  
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Navbar.Brand href="#home">Ahmed Mir</Navbar.Brand>
@@ -12,7 +17,7 @@ function AdminNavbar() {
           </Nav>
           <Nav>
             <Nav.Link href="#deets">Hello Admin</Nav.Link>
-            <Nav.Link href="#memes">
+            <Nav.Link onClick={props.logoutfunction} >
               Logout
             </Nav.Link>
           </Nav>

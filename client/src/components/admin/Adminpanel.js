@@ -8,7 +8,7 @@ import AdminCustomer from './AdminCustomer'
 import AdminOrder from './AdminOrder'
 import './adminpanel.css'
 
-function Adminpanel() {
+function Adminpanel(props) {
 
     const [rendercomp,setRenderComp]= useState('');
 
@@ -29,7 +29,7 @@ function Adminpanel() {
     }
     return (
         <div>
-            <AdminNavbar/>
+            <AdminNavbar logoutfunction={props.logoutfunction}/>
           
           <div className="flexwrapadmin">
            
