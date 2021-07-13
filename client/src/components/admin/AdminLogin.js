@@ -22,7 +22,7 @@ function AdminLogin(props) {
   
     axios.post('http://localhost:8000/login',{withCredentials:true}).then(
       (res)=>{
-        props.loginfunction()
+        props.loginfunction(true)
         console.log(res.data)
       })
 
