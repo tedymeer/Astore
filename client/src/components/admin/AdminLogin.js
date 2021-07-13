@@ -1,7 +1,8 @@
 import React from 'react'
 import { useState } from 'react';
+import axios from 'axios'
 import './adminlogin.css'
-
+axios.defaults.withCredentials=true
 function AdminLogin(props) {
 
   const [loginform,setLoginForm]= useState({
@@ -18,17 +19,13 @@ function AdminLogin(props) {
 
   function HandleSubmit(e){
     e.preventDefault();
-    //umair bhai yahan pe adminlogin ka route bna dein 'adminlogin/' k naam se
-    fetch('https://127.0.0.1:8000/endpoint/', {
-          method: 'POST',
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(loginform)
+  
+    axios.get('http://localhost:8000/login',{withCredentials:true}).then(
+      (res)=>{
+        props.loginfunction()
+        console.log(res.data)
       })
-      .then(resp => resp.json())
-      .then(res =>  props.loginfunction(res));
+
 
       setLoginForm({
       adminusername:'',
