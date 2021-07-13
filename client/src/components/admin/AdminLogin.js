@@ -20,7 +20,7 @@ function AdminLogin(props) {
   function HandleSubmit(e){
     e.preventDefault();
   
-    axios.get('http://localhost:8000/login',{withCredentials:true}).then(
+    axios.post('http://localhost:8000/login',{withCredentials:true}).then(
       (res)=>{
         props.loginfunction()
         console.log(res.data)
