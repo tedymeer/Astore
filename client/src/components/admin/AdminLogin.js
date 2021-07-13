@@ -20,10 +20,11 @@ function AdminLogin(props) {
   function HandleSubmit(e){
     e.preventDefault();
   
-    axios.post('http://127.0.0.1:8000/login',{withCredentials:false}).then(
+    axios.post('/login',{withCredentials:true}).then(
       (res)=>{
         props.loginfunction(true)
-        console.log(res.data)
+        console.log('ok')
+        // console.log(res.data)
       })
 
 
