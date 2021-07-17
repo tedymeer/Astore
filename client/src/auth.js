@@ -10,17 +10,19 @@ class Auth {
     }
   
     login(cb) {
-      this.state.authenticated = true;
+    //   this.state.authenticated = true;
 
-        console.log(this.state.adminusername)
-        console.log(this.state.adminpassword)
-        console.log(this.state.authenticated)
-    // axios.post('/login',{withCredentials:true}).then(
-    //     (res)=>{
-    //       console.log('ok')
-    //       // console.log(res.data)
-    //     })
-  
+    //     console.log(this.state.adminusername)
+    //     console.log(this.state.adminpassword)
+    //     console.log(this.state.authenticated)
+    axios.post('/login', {username:this.state.adminusername,password:this.state.adminpassword}, {
+        withCredentials: true,
+        headers: {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'
+    }}).then(
+        (res)=>{
+          console.log(res.data)
+          this.state.authenticated=res.status;
+        });
       cb();
     }
   
