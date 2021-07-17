@@ -1,8 +1,10 @@
 import React from 'react'
 import {Navbar,Nav} from 'react-bootstrap'
+import { useHistory } from "react-router-dom";
+import auth from '../../auth'
 function AdminNavbar(props) {
 
-
+  let history = useHistory();
 
 
   
@@ -17,7 +19,11 @@ function AdminNavbar(props) {
           </Nav>
           <Nav>
             <Nav.Link href="#deets">Hello Admin</Nav.Link>
-            <Nav.Link onClick={props.logoutfunction} >
+            <Nav.Link onClick={() => {
+          auth.logout(() => {
+            history.push("/adminlogin");
+          });
+        }} >
               Logout
             </Nav.Link>
           </Nav>
