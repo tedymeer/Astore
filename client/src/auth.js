@@ -15,10 +15,8 @@ class Auth {
     //     console.log(this.state.adminusername)
     //     console.log(this.state.adminpassword)
     //     console.log(this.state.authenticated)
-    axios.post('127.0.0.1:8000/login', {username:this.state.adminusername,password:this.state.adminpassword}, {
-        withCredentials: true,
-        headers: {'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json'
-    }}).then(
+    axios.post('localhost:8000/login', {username:this.state.adminusername,password:this.state.adminpassword}, 
+    {withCredentials: true}).then(
         (res)=>{
           console.log(res.data)
           this.state.authenticated=res.status;
