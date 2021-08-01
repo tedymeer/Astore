@@ -11,7 +11,7 @@ import React from 'react'
 function Sidebar(props) {
     return (
         <div className="sidebarwrap">
-        <ProSidebar collapsed={false}>
+        <ProSidebar collapsed={props.status}>
            
             <SidebarContent>
 

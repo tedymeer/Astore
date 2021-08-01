@@ -3,3 +3,58 @@
     height: 95vh;
     
 }
+
+.prod-nav{
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+
+}
+.prod-sub-comp{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+label {
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+input[type="radio"],input[type="checkbox"] {
+    margin-right: 1%;
+    margin-left:1%;
+  }
+
+  .btn{
+      margin: 1%;
+  }
+
+  .add-prod-heading{
+      /* width: fit-content; */
+      text-align: center;
+      font-size: 25px;
+
+  }
+
+  .add-prod-wrap {
+    margin-left: 1%;
+    /* text-align: center; */
+}
+
+.field{
+    width: 15rem;
+    border: 1px solid black;
+}
+
+textarea,input {
+    border: none;
+    outline: none;
+   
+    
+}
+textarea{
+    resize: both;
+}

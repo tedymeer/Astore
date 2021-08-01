@@ -1,0 +1,15 @@
+.nav-style{
+    background-color: #1d1d1d;
+}
+
+.navbar-light .navbar-brand {
+    color: #adadad;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #adadad;
+}
+.navbarstyle{
+    display: flex;
+    justify-content: space-evenly;
+}

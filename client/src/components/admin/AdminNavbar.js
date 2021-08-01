@@ -1,15 +1,21 @@
-import React from 'react'
+import React , {useState} from 'react'
 import {Navbar,Nav} from 'react-bootstrap'
 import { useHistory } from "react-router-dom";
 import auth from '../../auth'
-function AdminNavbar(props) {
+import './adminnavbar.css'
 
+
+import Switch from "react-switch";
+
+
+function AdminNavbar(props) {
+const [sidebarswitch, setSideBarSwitch] = useState(true)
   let history = useHistory();
 
 
   
     return (
-        <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="lg" className="nav-style">
         <Navbar.Brand href="#home">Ahmed Mir</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
@@ -18,6 +24,12 @@ function AdminNavbar(props) {
             <Nav.Link href="#pricing">Pricing</Nav.Link>
           </Nav>
           <Nav>
+            
+          <Nav.Link>  
+            
+            <Switch onChange={()=>{setSideBarSwitch(!sidebarswitch);
+                    props.sidebar(sidebarswitch)}} checked={sidebarswitch} />
+          </Nav.Link>
             <Nav.Link href="#deets">Hello Admin</Nav.Link>
             <Nav.Link onClick={() => {
           auth.logout(() => {

@@ -9,7 +9,7 @@ import AdminOrder from './AdminOrder'
 import './adminpanel.css'
 
 function Adminpanel() {
-
+    const [sidebarstatus, setSideBarStatus] = useState(null)
     const [rendercomp,setRenderComp]= useState('');
 
     function renderAdminPart(arg){
@@ -27,13 +27,16 @@ function Adminpanel() {
             setRenderComp('customer')
         }
     }
+    function sidebar(status){
+        setSideBarStatus(status)
+    }
     return (
         <div>
-            <AdminNavbar />
+            <AdminNavbar sidebar={sidebar}/>
           
           <div className="flexwrapadmin">
            
-           <AdminSidebar renderAdminPart={renderAdminPart}/>
+           <AdminSidebar renderAdminPart={renderAdminPart} status={sidebarstatus}/>
          {rendercomp==='dash' && <AdminDashboard/>}
          {rendercomp==='order' && <AdminOrder/>}
          {rendercomp==='product' && <AdminProduct/>}
