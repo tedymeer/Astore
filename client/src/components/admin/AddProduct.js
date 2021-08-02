@@ -7,7 +7,7 @@ function AddProduct() {
         prodName:null,
         prodPrice:null,
         prodDes:null,
-        
+        prodQty:null,
         prodCategory:null,
 
         size:null,
@@ -44,6 +44,11 @@ function AddProduct() {
                 <div className="prod-price-field">
                 <label htmlFor="prodprice">Product Price</label><br/>
                 <input id="prodprice" type="number" name="prodPrice" min="0" step="any" className="field" onChange={handleChange}/>
+                
+                </div>
+                <div className="prod-q-field">
+                <label htmlFor="prodqty">Product Quantity</label><br/>
+                <input id="prodqty" type="number" name="prodQty" min="0" step="any" className="field" onChange={handleChange}/>
                 
                 </div>
                 <div className="prod-discription-field">

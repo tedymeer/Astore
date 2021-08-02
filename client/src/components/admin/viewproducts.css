@@ -1,0 +1,22 @@
+.p-head{
+text-align: center;
+font-size: 2rem;
+}
+.table-wrap{
+    width: 80%;
+}
+/* Table, Thead, Tbody, Tr, Th, Td  */
+Table,Thead,Tbody,Tr,Th,Td{
+    padding: 1%;
+}
+Table,Thead{
+    /* border-radius: 10px; */
+    box-shadow: 2px 3px 5px #aaaaaa;
+}
+Thead{
+    background-color: #1d1d1d;
+    color: white;
+}
+tbody Tr:nth-child(odd){
+    background-color: lightgray;
+  }

@@ -58,3 +58,9 @@ textarea,input {
 textarea{
     resize: both;
 }
+
+.add-prod-wrap{
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 2%;
+}
