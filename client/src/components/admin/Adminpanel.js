@@ -7,6 +7,7 @@ import AdminProduct from './AdminProduct'
 import AdminCustomer from './AdminCustomer'
 import AdminOrder from './AdminOrder'
 import './adminpanel.css'
+import ManageAdmins from './ManageAdmins'
 
 function Adminpanel() {
     const [sidebarstatus, setSideBarStatus] = useState(null)
@@ -26,6 +27,9 @@ function Adminpanel() {
         else if(arg==='customer'){
             setRenderComp('customer')
         }
+        else if(arg==='mngadmins'){
+            setRenderComp('mngadmins')
+        }
     }
     function sidebar(status){
         setSideBarStatus(status)
@@ -33,7 +37,8 @@ function Adminpanel() {
     return (
         <div>
             <AdminNavbar sidebar={sidebar}/>
-          
+           
+
           <div className="flexwrapadmin">
            
            <AdminSidebar renderAdminPart={renderAdminPart} status={sidebarstatus}/>
@@ -41,8 +46,10 @@ function Adminpanel() {
          {rendercomp==='order' && <AdminOrder/>}
          {rendercomp==='product' && <AdminProduct/>}
          {rendercomp==='customer' && <AdminCustomer/>}
+         {rendercomp==='mngadmins' && <ManageAdmins/>}
            </div>
            
+
         </div>
     )
 }

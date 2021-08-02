@@ -1,8 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
+import axios from 'axios'
 import { Table, Thead, Tbody, Tr, Th, Td } from 'react-super-responsive-table'
 import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css'
 import './viewproducts.css'
 function ViewProducts() {
+    const[products,setProducts]=useState(null)
+
+//GET request to display all products
+    axios.get('http://localhost:8000/viewproducts', 
+    {withCredentials: true}).then(
+        (res)=>{
+        //   console.log(res.data)
+        setProducts(res.data)
+        });
+
+
     return (
         <div className="table-wrap">
             <div className="p-head">Products list</div>
@@ -15,26 +27,17 @@ function ViewProducts() {
         </Tr>
       </Thead>
       <Tbody>
-        <Tr>
-          <Td>25D</Td>
-          <Td>BLUE JEANS</Td>
-          <Td>50</Td>
-        </Tr>
-        <Tr>
-          <Td>25D</Td>
-          <Td>BLUE JEANS</Td>
-          <Td>50</Td>
-        </Tr>
-        <Tr>
-          <Td>25D</Td>
-          <Td>BLUE JEANS</Td>
-          <Td>50</Td>
-        </Tr>
-        <Tr>
-          <Td>25D</Td>
-          <Td>BLUE JEANS</Td>
-          <Td>50</Td>
-        </Tr>
+        {
+            // products.map((cval,cindex)=>{
+            //     return(
+            //     <Tr>
+            //     <Td>{cval.pid}</Td>
+            //     <Td>{cval.name}</Td>
+            //     <Td>{cval.qty}</Td>
+            //     </Tr>
+            //     )
+            // })
+        }
       </Tbody>
     </Table>
     </div>

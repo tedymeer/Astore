@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import { Button } from 'react-bootstrap'
-
+import axios from 'axios'
 function AddProduct() {
     const [form, setForm] = useState({
         prodId:null,
@@ -27,33 +27,71 @@ function AddProduct() {
             
      
     }
+    function HandleSubmit(e){
+        e.preventDefault();
+        let formData = new FormData();    //formdata object
+
+        formData.append('prodId', form.prodId);   //append the values with key, value pair
+        formData.append('prodName', form.prodName);
+        formData.append('prodPrice', form.prodPrice);
+        formData.append('prodDes', form.prodDes);
+        formData.append('prodQty', form.prodQty);
+        formData.append('prodCategory', form.prodCategory);
+        formData.append('Prodphotos', form.Prodphotos);
+
+const config = {     
+    withCredentials:true,
+    headers: { 'content-type': 'multipart/form-data' }
+}
+
+axios.post('http://localhost:8000/addproduct', formData, config)
+    .then(response => {
+        console.log(response);
+    })
+    .catch(error => {
+        console.log(error);
+    });
+    
+setForm({
+    prodId:'',
+    prodName:'',
+    prodPrice:'',
+    prodDes:'',
+    prodQty:'',
+    prodCategory:'',
+
+    size:'',
+
+    Prodphotos:''
+})
+}
     return (
         <div className="add-prod-wrap">
             <div className="add-prod-heading">Add a product</div>
-            <form className="add-prod-form">
+            <form className="add-prod-form" onSubmit={HandleSubmit}>
 
 
                <div className="prod-id-field">
                <label htmlFor="prodid">Product ID</label><br/>
-                <input id="prodid" type="text" name="prodId" className="field" onChange={handleChange}/>
+                <input id="prodid" type="text" name="prodId" className="field" onChange={handleChange} value={form.prodId}/>
                 </div>
                 <div className="prod-name-field">
                 <label htmlFor="prodname">Product Name</label><br/>    
-                <input id="prodname" type="text" name="prodName" className="field" onChange={handleChange}/>
+                <input id="prodname" type="text" name="prodName" className="field" onChange={handleChange} value={form.prodName}/>
                 </div>
                 <div className="prod-price-field">
                 <label htmlFor="prodprice">Product Price</label><br/>
-                <input id="prodprice" type="number" name="prodPrice" min="0" step="any" className="field" onChange={handleChange}/>
+                <input id="prodprice" type="number" name="prodPrice" min="0" step="any" className="field" onChange={handleChange} value={form.prodPrice}/>
                 
                 </div>
                 <div className="prod-q-field">
                 <label htmlFor="prodqty">Product Quantity</label><br/>
-                <input id="prodqty" type="number" name="prodQty" min="0" step="any" className="field" onChange={handleChange}/>
+                <input id="prodqty" type="number" name="prodQty" min="0" step="any" className="field" onChange={handleChange} value={form.prodQty}/>
                 
                 </div>
                 <div className="prod-discription-field">
                 <label htmlFor="discrip">Product Discription</label><br/>
-                    <textarea name="prodDes" id="discrip" placeholder="Add a description" className="field" onChange={handleChange}></textarea>
+                    <textarea name="prodDes" id="discrip" placeholder="Add a description" className="field" onChange={handleChange} value={form.prodDes}></textarea>
                 </div>
                 <div className="prod-category-field">
                     <div>Select Category</div>
@@ -106,7 +144,7 @@ function AddProduct() {
                 </div>
                 <div className="prod-photo-field">
                 <label htmlFor="photos">Select photos</label><br/>
-                <input type="file" id="photos" name="Prodphotos" multiple onChange={handleChange}/>
+                <input type="file" id="photos" name="Prodphotos" multiple onChange={handleChange} value={form.Prodphotos}/>
                 </div>
                 <Button type="submit" variant="dark">Add + </Button>
                 <Button variant="info" type="reset">Reset</Button>

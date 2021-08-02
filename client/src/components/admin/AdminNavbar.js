@@ -15,13 +15,13 @@ const [sidebarswitch, setSideBarSwitch] = useState(true)
 
   
     return (
+      <div>
         <Navbar collapseOnSelect expand="lg" className="nav-style">
         <Navbar.Brand href="#home">Ahmed Mir</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link href="#features">View website</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
           </Nav>
           <Nav>
             
@@ -41,6 +41,8 @@ const [sidebarswitch, setSideBarSwitch] = useState(true)
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+
+      </div>      
     )
 }
 
