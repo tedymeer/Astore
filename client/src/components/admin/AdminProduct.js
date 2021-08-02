@@ -18,15 +18,15 @@ function AdminProduct() {
                 </Button>
                 <Button variant="success" onClick={()=>{setSubSection('add')}}>
                 
-                    Add product
+                    Add product +
                 
                 </Button>
-                <Button variant="warning" onClick={()=>{setSubSection('update')}}>
+                {/* <Button variant="warning" onClick={()=>{setSubSection('update')}}>
                     Update product
                 </Button>
                 <Button variant="danger" onClick={()=>{setSubSection('remove')}}>
                     Remove product                    
-                </Button>
+                </Button> */}
 
             </div>
             <div className="prod-sub-comp">
