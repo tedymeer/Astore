@@ -4,9 +4,9 @@ import 'react-super-responsive-table/dist/SuperResponsiveTableStyle.css'
 import {Button} from 'react-bootstrap'
 import ViewAdmins from './ViewAdmins'
 import AddAdmin from './AddAdmin'
-import RemoveAdmin from './RemoveAdmin'
+// import RemoveAdmin from './RemoveAdmin'
 import AddIcon from '@material-ui/icons/Add';
-import DeleteIcon from '@material-ui/icons/Delete';
+// import DeleteIcon from '@material-ui/icons/Delete';
 function ManageAdmins() {
     const [subsection, setSubSection] = useState('view')
     return (
@@ -22,18 +22,18 @@ function ManageAdmins() {
                 
                 </Button>
              
-             <Button variant="danger" onClick={()=>{setSubSection('remove')}}>
+             {/* <Button variant="danger" onClick={()=>{setSubSection('remove')}}>
                 
                   Remove Admin <DeleteIcon/>
               
-              </Button>
+              </Button> */}
             
             </div>
             <div className="prod-sub-comp">
                 
                 {subsection==='view' && <ViewAdmins/>}
                 {subsection==='add' && <AddAdmin/>}
-                {subsection==='remove' && <RemoveAdmin/>}
+                {/* {subsection==='remove' && <RemoveAdmin/>} */}
             </div>
         </div>
     )

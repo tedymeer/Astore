@@ -80,7 +80,7 @@ function AddAdmin() {
                <label htmlFor="admincnewpassword">Confirm password</label><br/>
                 <input id="admincnewpassword" type="text" name="admincnewpassword" className="field" onChange={handleChange} />
                </div>
-               {cpassword && <div>Password doesn't match</div>}
+               {cpassword && <div style={{color:'red'}}>Password doesn't match</div>}
                
                 <Button type="submit" variant="dark">Add + </Button>
                 <Button variant="info" type="reset">Reset</Button>

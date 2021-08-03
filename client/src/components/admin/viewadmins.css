@@ -2,6 +2,9 @@
 cursor: pointer;
 color: green;
 }
+.del{
+    color:black
+}
 .del:hover{
     cursor: pointer;
     color: red;

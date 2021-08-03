@@ -8,7 +8,7 @@ import AdminCustomer from './AdminCustomer'
 import AdminOrder from './AdminOrder'
 import './adminpanel.css'
 import ManageAdmins from './ManageAdmins'
-
+import auth from '../../auth'
 function Adminpanel() {
     const [sidebarstatus, setSideBarStatus] = useState(null)
     const [rendercomp,setRenderComp]= useState('');
@@ -27,7 +27,7 @@ function Adminpanel() {
         else if(arg==='customer'){
             setRenderComp('customer')
         }
-        else if(arg==='mngadmins'){
+        else if(arg==='mngadmins' && auth.state.adminlevel==='special'){
             setRenderComp('mngadmins')
         }
     }

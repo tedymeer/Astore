@@ -25,7 +25,7 @@ function Sidebar(props) {
 
 
 {
-    auth.state.adminlevel==='master' &&
+    auth.state.adminlevel==='special' &&
     <MenuItem style={{marginTop:'auto'}} icon={<SettingsIcon/>} onClick={()=>{props.renderAdminPart('mngadmins')}}>Manage Admins</MenuItem>
   
 } 
