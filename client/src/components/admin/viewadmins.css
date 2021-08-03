@@ -1,0 +1,11 @@
+.add:hover{
+cursor: pointer;
+color: green;
+}
+.del:hover{
+    cursor: pointer;
+    color: red;
+}
+.add,.del{
+    margin-left: 3%;
+}

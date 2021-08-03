@@ -7,6 +7,7 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import PeopleIcon from '@material-ui/icons/People';
 import SettingsIcon from '@material-ui/icons/Settings';
 import './sidebar.css'
+import auth from '../../auth'
 import React from 'react'
 
 function Sidebar(props) {
@@ -22,7 +23,13 @@ function Sidebar(props) {
     <MenuItem icon={<ShoppingCartIcon/>} onClick={()=>{props.renderAdminPart('product')}}>Products</MenuItem>
     <MenuItem icon={<PeopleIcon/>} onClick={()=>{props.renderAdminPart('customer')}}>Customers</MenuItem>
 
+
+{
+    auth.state.adminlevel==='master' &&
     <MenuItem style={{marginTop:'auto'}} icon={<SettingsIcon/>} onClick={()=>{props.renderAdminPart('mngadmins')}}>Manage Admins</MenuItem>
+  
+} 
+  
   </Menu>
 
             </SidebarContent>

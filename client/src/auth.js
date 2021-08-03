@@ -5,6 +5,7 @@ class Auth {
         this.state={
             adminusername:'',
             adminpassword:'',
+            adminlevel:'master',
             authenticated:true
         }
     }

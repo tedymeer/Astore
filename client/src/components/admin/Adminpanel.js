@@ -46,6 +46,8 @@ function Adminpanel() {
          {rendercomp==='order' && <AdminOrder/>}
          {rendercomp==='product' && <AdminProduct/>}
          {rendercomp==='customer' && <AdminCustomer/>}
+
+
          {rendercomp==='mngadmins' && <ManageAdmins/>}
            </div>
            

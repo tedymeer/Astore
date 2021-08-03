@@ -1,0 +1,11 @@
+.manage-ad-wrap{
+    flex: 80%;
+    height: 100vh;
+}
+
+.m-a-wrap{
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    
+}
