@@ -20,6 +20,7 @@ function AdminDashboard() {
                 <Col className="chart-wrap">
                 <LinechartWidget/>
                 </Col>
+                
             </Row>
             </Container>
         </div>
