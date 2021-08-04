@@ -4,11 +4,12 @@ import './dashboard.css'
 import NumberWidget from './NumberWidget'
 import MoneyWidget from './MoneyWidget'
 import LinechartWidget from './LinechartWidget'
+import TextWidget from './TextWidget'
 function AdminDashboard() {
     return (
         <div className="dashwrap">
             <Container >
-            <Row>
+            <Row >
                 <Col className="num-wig">
                <NumberWidget title="New orders" number={2562}/>
                 </Col>
