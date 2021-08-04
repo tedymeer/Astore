@@ -11,16 +11,19 @@ class Auth {
     }
   
     login(cb) {
+        let url = process.env.REACT_APP_API_URL + "/login";
     //   this.state.authenticated = true;
 
     //     console.log(this.state.adminusername)
     //     console.log(this.state.adminpassword)
     //     console.log(this.state.authenticated)
-    axios.post('http://localhost:8000/login', {username:this.state.adminusername,password:this.state.adminpassword}, 
+    axios.post(url, {username:this.state.adminusername,password:this.state.adminpassword}, 
     {withCredentials: true}).then(
-        (res)=>{
-          console.log(res.data)
-          this.state.authenticated=res.status;
+        (res)=>{      
+          console.log(res)
+          if(res.status === 200){
+            this.state.authenticated=true;
+          }
         });
       cb();
     }

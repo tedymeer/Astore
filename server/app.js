@@ -11,6 +11,15 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+var cors = require('cors')
+
+var corsOptions = {
+    origin: 'http://localhost:3001', // Add url of frontend
+    credentials: true };
+
+app.use(cors(corsOptions));
+
+
 app.use('/users', require('./routes/users'));
 
 module.exports = app;
