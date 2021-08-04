@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+.chart-wrap.col{
+    display: flex;
+    justify-content: center;
+    margin: 1%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    background-color: ghostwhite;
+}
+.line-chart-wrap{
+width: 100%;
+}
+.line-chart-heading{
+    text-align: center;
+    font-size: 1.8rem;
+    color:black;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}

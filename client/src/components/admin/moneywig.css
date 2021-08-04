@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+.money-wig-wrap{
+
+}
+.money-upper-sub-wrap{
+    display: flex;
+    justify-content: space-between;
+}
+.mon-wig.col{
+    margin: 1%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+    background-color: #515151;
+}
+.money-title{
+    font-size: 1.2rem;
+    color: #F0F0F0;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}
+.money-title,.revenue-icon{
+    display: inline;
+}
+
+.revenue-icon{
+    margin-top: 0.8%;
+    color: #F0F0F0;
+}
+.money-number{
+    font-size: 2rem;
+    color:rgb(195, 255, 74);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}

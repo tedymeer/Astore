@@ -11,7 +11,7 @@ import ManageAdmins from './ManageAdmins'
 import auth from '../../auth'
 function Adminpanel() {
     const [sidebarstatus, setSideBarStatus] = useState(null)
-    const [rendercomp,setRenderComp]= useState('');
+    const [rendercomp,setRenderComp]= useState('dash');
 
     function renderAdminPart(arg){
 
