@@ -12,13 +12,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 var cors = require('cors')
-
+//cors error fixed//
 var corsOptions = {
     origin: 'http://localhost:3001', // Add url of frontend
     credentials: true };
 
 app.use(cors(corsOptions));
-
+//////////////////////
 
 app.use('/users', require('./routes/users'));
 
