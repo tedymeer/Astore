@@ -19,6 +19,9 @@
 /* .text-wig-wrap{
     height: 100%;
 } */
-.p-a-icons:hover{
+.p-a-icons{
     color: white;
+}
+.p-a-icons:hover{
+    color: black;
 }
