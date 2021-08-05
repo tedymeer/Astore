@@ -2,9 +2,8 @@ import React from 'react'
 import { useState } from 'react'
 import AddProduct from './AddProduct'
 import ViewProducts from './ViewProducts'
-import UpdateProducts from './UpdateProducts'
-import RemoveProduct from './RemoveProduct'
-import {Button} from 'react-bootstrap'
+import {Row,Col, Container} from 'react-bootstrap'
+import TextWidget from './TextWidget'
 import './products.css'
 function AdminProduct() {
     const [subsection, setSubSection] = useState('view')
@@ -12,7 +11,18 @@ function AdminProduct() {
         <div className="prodwrap">
             {/* Product */}
             <div className="prod-nav">
-                <Button variant="primary" onClick={()=>{setSubSection('view')}}>
+            <Container >
+            <Row>
+                <Col className="text-wig" style={{backgroundColor:'#007FFF'}}>
+               <TextWidget producticon={true} title="View Products" onClick={()=>{setSubSection('view')}}/>
+                </Col>
+                <Col className="text-wig" style={{backgroundColor:'#20A464'}}>
+               <TextWidget addicon={true} title="Add Product" onClick={()=>{setSubSection('add')}}/>
+                </Col>
+            </Row>
+            
+            </Container>
+                {/* <Button variant="primary" onClick={()=>{setSubSection('view')}}>
                 
                     View products
                 </Button>
@@ -21,6 +31,8 @@ function AdminProduct() {
                     Add product +
                 
                 </Button>
+         */}
+
                 {/* <Button variant="warning" onClick={()=>{setSubSection('update')}}>
                     Update product
                 </Button>
@@ -33,8 +45,6 @@ function AdminProduct() {
                 
                 {subsection==='view' && <ViewProducts/>}
                 {subsection==='add' && <AddProduct/>}
-                {subsection==='update' && <UpdateProducts/>}
-                {subsection==='remove' && <RemoveProduct/>}
                 
             </div>
         </div>

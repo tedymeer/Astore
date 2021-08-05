@@ -1,5 +1,4 @@
-import React from 'react'
-import {useState} from 'react'
+import React,{useState,useEffect}  from 'react'
 import AdminSidebar from './AdminSidebar'
 import AdminNavbar from './AdminNavbar'
 import AdminDashboard from './AdminDashboard'
@@ -9,10 +8,22 @@ import AdminOrder from './AdminOrder'
 import './adminpanel.css'
 import ManageAdmins from './ManageAdmins'
 import auth from '../../auth'
+
 function Adminpanel() {
     const [sidebarstatus, setSideBarStatus] = useState(null)
     const [rendercomp,setRenderComp]= useState('dash');
-
+    
+    
+    // const handleResize = () => {
+    //     if (window.innerWidth < 769) {
+    //         setSideBarStatus(true)
+    //     } 
+    //   }
+    //   useEffect(() => {
+    //     window.addEventListener("resize", handleResize)
+    //   })
+      
+    
     function renderAdminPart(arg){
 
         if(arg==='dash'){

@@ -2,6 +2,7 @@ import React from 'react'
 import './textwig.css'
 import PersonIcon from '@material-ui/icons/Person';
 import AddCircleIcon from '@material-ui/icons/AddCircle';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 function TextWidget(props) {
     // if(props.theme==="1"){
     //     document.querySelector(".text-wig.col").style.backgroundColor="#007FFF"
@@ -23,6 +24,12 @@ function TextWidget(props) {
             props.addicon &&
             <div style={{textAlign:'center'}}>
             <AddCircleIcon className="p-a-icons" style={{height:'3rem',width:'3rem'}}/>
+        </div>
+        }
+         {
+            props.producticon &&
+            <div style={{textAlign:'center'}}>
+            <ShoppingCartIcon className="p-a-icons" style={{height:'3rem',width:'3rem'}}/>
         </div>
         }
         
