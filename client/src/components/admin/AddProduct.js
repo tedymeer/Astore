@@ -43,7 +43,6 @@ const config = {
     withCredentials:true,
     headers: { 'content-type': 'multipart/form-data' }
 }
-
 axios.post('http://localhost:8000/addproduct', formData, config)
     .then(response => {
         console.log(response);
