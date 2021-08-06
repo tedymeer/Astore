@@ -7,7 +7,7 @@ function ViewProducts() {
     const[products,setProducts]=useState(null)
 
 //GET request to display all products
-    axios.get('http://localhost:8000/viewproducts', 
+    axios.get('http://localhost:3001/product/list', 
     {withCredentials: true}).then(
         (res)=>{
         //   console.log(res.data)

@@ -12,8 +12,7 @@ const adminSchema = new mongoose.Schema(
     password: {
       type:String,
       unique:true
-    },
-    role: String
+    }
   },
   { timestamps: true }
 );

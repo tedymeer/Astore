@@ -31,7 +31,7 @@ function AdminLogin(props) {
 
       setLoginForm({
         adminusername:'',
-        adminpassword:''})
+        adminpassword:''})  
   }
     return (
       <div className="adminloginwrap">

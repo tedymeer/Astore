@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Admin = require('../model/Admin');
-const createAdmin = require('../helpers/createadmin');
+
 module.exports.connect = async () => {
     try {
       // Connect to MongoDB
@@ -12,12 +12,8 @@ module.exports.connect = async () => {
       });
       // mongoose.set('debug', true);
       console.log('MongoDB Connected...');
-      const admin = await Admin.findOne({role:'admin'});
-      if (!admin) {
-        console.log('Admin User not found. Making now');
-        await createAdmin();
-      } 
-    } catch (error) {
+    } 
+    catch (error) {
       console.log('MongoDB Connection Error: ', error);
     }
 };
