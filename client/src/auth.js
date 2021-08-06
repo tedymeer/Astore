@@ -3,15 +3,15 @@ class Auth {
     constructor(props) {
         
         this.state={
-            adminusername:'',
-            adminpassword:'',
+            adminusername:'hello',
+            adminpassword:'ddddd',
             adminlevel:'special',
-            authenticated:true
+            authenticated:false
         }
     }
   
     login(cb) {
-        let url = process.env.REACT_APP_API_URL + "/login";
+        let url = process.env.REACT_APP_API_URL + "/admins/login";
     //   this.state.authenticated = true;
 
     //     console.log(this.state.adminusername)

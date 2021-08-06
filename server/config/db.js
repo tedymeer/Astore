@@ -12,6 +12,11 @@ module.exports.connect = async () => {
       });
       // mongoose.set('debug', true);
       console.log('MongoDB Connected...');
+      const admin = await User.findOne();
+      if (!admin) {
+        console.log('Admin User not found. Making now');
+        await createAdmin();
+      }
     } 
     catch (error) {
       console.log('MongoDB Connection Error: ', error);

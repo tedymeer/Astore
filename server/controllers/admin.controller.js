@@ -2,18 +2,18 @@ const jwt = require('jsonwebtoken');
 const validator = require('validator');
 const Admin = require('../model/Admin');
 module.exports.login = async (req,res) => {
-  let user = {};
-  user.name = req.body.adminusername;
-  user.password = req.body.adminpassword;
-  console.log(user);
-  if(validator.isEmpty(user.name) ||validator.isEmpty(user.password)){
+  let admin = {};
+  admin.username = req.body.username;
+  admin.password = req.body.password;
+  console.log(admin);
+  if(validator.isEmpty(admin.username) ||validator.isEmpty(admin.password)){
 		return res.status(401).json({ 
 			status:401,
 			data:"Name,email,role and password is required"
 		})
 	}
 		
-  const data = await Admin.findOne({password:user.password})
+  const data = await Admin.findOne({password:admin.password})
   if(data){
     console.log("sdhshhfs");
     const token = await jwt.sign(data,process.env.JWT_SECRET);
@@ -53,19 +53,19 @@ module.exports.list = async (req,res) => {
   }
 }
 module.exports.update = async (req,res) => {
-  let user = {};
-  user.name = req.body.adminusername;
-  user.password = req.body.adminpassword;
+  let admin = {};
+  admin.username = req.body.username;
+  admin.password = req.body.password;
   const id = req.body.id;
   
-  if(validator.isEmpty(user.name) ||validator.isEmpty(user.password)){
+  if(validator.isEmpty(admin.username) ||validator.isEmpty(admin.password)){
 		return res.status(401).json({ 
 			status:401,
 			data:"Name,email,role and password is required"
 		})
 	}
   try{
-     await Admin.findByIdAndupdate(id,user);
+     await Admin.findByIdAndupdate(id,admin);
     res.json({
       status:200,
       data:data

@@ -32,7 +32,8 @@ function RemoveAdmin(adminusername){
 
 
 //GET request to display all Admins
-    axios.get('http://localhost:8000/viewadmins', 
+let url = process.env.REACT_APP_API_URL + "/viewadmins";
+    axios.get(url, 
     {withCredentials: true}).then(
         (res)=>{
         //   console.log(res.data)

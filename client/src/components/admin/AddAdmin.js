@@ -36,8 +36,8 @@ function AddAdmin() {
         withCredentials:true,
         headers: { 'content-type': 'multipart/form-data' }
     }
-    
-    axios.post('http://localhost:8000/addadmin', formData, config)
+    let url = process.env.REACT_APP_API_URL + '/addadmin'
+    axios.post(url, formData, config)
         .then(response => {
             console.log(response);
         })
