@@ -7,7 +7,8 @@ function ViewProducts() {
     const[products,setProducts]=useState(null)
 
 //GET request to display all products
-    axios.get('http://localhost:3001/product/list', 
+let url = process.env.REACT_APP_API_URL + "/product/list";
+    axios.get(url, 
     {withCredentials: true}).then(
         (res)=>{
         //   console.log(res.data)

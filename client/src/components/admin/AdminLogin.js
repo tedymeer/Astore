@@ -1,8 +1,8 @@
-import React from 'react'
+import React from 'react';
 import { useState } from 'react';
-import axios from 'axios'
-import './adminlogin.css'
-import auth from '../../auth'
+import axios from 'axios';
+import './adminlogin.css';
+import auth from '../../auth';
 import { useHistory } from "react-router-dom";
 axios.defaults.withCredentials=true
 
@@ -12,8 +12,6 @@ function AdminLogin(props) {
     adminusername:'',
     adminpassword:''
   })
-
-
   function inputHandler(e){
     setLoginForm((oldVals)=>{
       return{...oldVals,[e.target.name]:e.target.value}
@@ -50,5 +48,4 @@ function AdminLogin(props) {
       </div>
     )
 }
-
 export default AdminLogin

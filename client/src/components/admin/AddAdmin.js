@@ -3,7 +3,7 @@ import { Button } from 'react-bootstrap'
 import axios from 'axios'
 function AddAdmin() {
     
-    const[cpassword,setCPassword]=useState(false)
+    const[cpassword,setCPassword] = useState(false)
     const [form, setForm] = useState({
 
         adminfullname:null,
@@ -16,8 +16,6 @@ function AddAdmin() {
     function HandleSubmit(e){
 
         e.preventDefault()
-
-
 
         if(form.adminnewpassword!==form.admincnewpassword){
             setCPassword(true)
@@ -36,8 +34,8 @@ function AddAdmin() {
         withCredentials:true,
         headers: { 'content-type': 'multipart/form-data' }
     }
-    
-    axios.post('http://localhost:8000/addadmin', formData, config)
+    let url = process.env.REACT_APP_API_URL + '/addadmin'
+    axios.post(url, formData, config)
         .then(response => {
             console.log(response);
         })
