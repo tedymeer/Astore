@@ -4,8 +4,8 @@ const multer = require('multer');
 
 module.exports.create = async (req,res) => {
   
-  const token = req.cookies.JWTtoken;
-  console.log(token);
+  console.log(req.user);
+  const token = req.cookies;
   let product = {};
 
   product.Id = req.body.prodId ? req.body.prodId : ""

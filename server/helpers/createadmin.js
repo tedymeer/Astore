@@ -8,4 +8,4 @@ module.exports = async () => {
   });
   await newAdmin.save();
   return;
-};
+}; 

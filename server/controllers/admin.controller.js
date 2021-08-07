@@ -5,7 +5,7 @@ module.exports.login = async (req,res) => {
   let admin = {};
   admin.username = req.body.username;
   admin.password = req.body.password;
-  //console.log(admin);
+  console.log(admin);
   if(validator.isEmpty(admin.username) ||validator.isEmpty(admin.password)){
 		return res.status(401).json({ 
 			status:401,
@@ -20,7 +20,7 @@ module.exports.login = async (req,res) => {
     //console.log(token);
     res.cookie("JWTtoken", token, {
       httpOnly:true 
-    }).send();
+    }).send(token);
   }  
   else{
     res.status(400).json({
