@@ -16,7 +16,7 @@ module.exports.login = async (req,res) => {
   console.log(data);
   if(data){
 //    console.log("sdhshhfs");
-    const token = await jwt.sign("amir",process.env.JWT_SECRET);
+    const token = await jwt.sign(data,process.env.JWT_SECRET);
     //console.log(token);
     res.cookie("JWTtoken", token, {
       httpOnly:true 

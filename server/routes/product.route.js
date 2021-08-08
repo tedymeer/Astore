@@ -5,8 +5,10 @@ const product = require('../controllers/product.controller');
 
 router.post('/',auth.authenticate,product.create);
 
-router.get('/list',product.list);
+router.get('/list',auth.authenticate,product.list);
 
-router.delete('/:id',product.delete);
+router.delete('/:id',auth.authenticate,product.delete);
+
+router.put('/',auth.authenticate,product.update);
 
 module.exports = router;

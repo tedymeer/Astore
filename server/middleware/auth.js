@@ -5,7 +5,7 @@ module.exports.authenticate = async (req, res, next) => {
   const token = req.cookies.JWTtoken;
   if(token){
     try{
-      const user = jwt.verify("fef",process.env.JWT_SECRET);
+      const user = jwt.verify(token,process.env.JWT_SECRET);
       req.user = user;
       next();
     }
@@ -14,5 +14,10 @@ module.exports.authenticate = async (req, res, next) => {
         data:"you are not valid"
       })
     }
+  }
+  else{
+    res.status(400).json({
+      data:"you should have a json web token"
+    })
   }
 }
